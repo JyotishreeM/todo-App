@@ -1,0 +1,65 @@
+<div class="container-fluid">
+    
+    <div class="container">
+        <div class="card shadow">
+            <h1 class="text-center bg-warning">Todo List</h1>
+        
+            <form (ngSubmit)="onSubmit(taskForm)" #taskForm="ngForm">
+                <div class="taskFormSection">
+                    <div class="form-group">
+                        <label for="task">Task</label>
+                        <input 
+                        type="text" 
+                        class="form-control" 
+                        id="task"  
+                        placeholder="Enter task" 
+                        ngModel 
+                        name="task"
+                        required>
+                        <small *ngIf="taskForm.invalid && taskForm.dirty" id="errorMessage" class="form-text text-danger">Required!</small>
+                    </div>
+                
+                    <button 
+                    [disabled]="taskForm.invalid"
+                    type="submit" 
+                    class="btn btn-primary" 
+                    id="submitButton">Submit</button>
+                </div>
+            </form>
+            
+            <!--task list-->
+            <div class="Tasktable shadow">
+                <h1 class="text-success">Task List:</h1>
+                <table class="table">
+                    <thead>
+                    <tr >
+                        
+                        <th scope="col">Task</th>
+                        <th scope="col" class="text-center">Complete</th>
+                        <th scope="col"class="text-center">Delete</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr  *ngFor="let t of taskArr; index as i">
+                    
+                        <td>{{t.taskName}}</td>
+                        <td class="text-center">
+                            <input 
+                            (change)="onCheck(i)"
+                            type="checkbox" 
+                            name="check" 
+                            id="MyCheckbox"
+                            data-toggle="modal" data-target="#exampleModal">
+                        </td>
+                        <td class="text-center"><button class="btn btn-outline-danger btn-sm" (click)="OnDelete(i)">X</button></td>
+                    </tr>
+                    
+                    </tbody>
+                </table>
+            </div>
+
+          
+          
+        </div>
+    </div>
+</div>

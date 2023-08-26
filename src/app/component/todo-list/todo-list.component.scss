@@ -1,0 +1,29 @@
+.container-fluid{
+   
+    display: flex;
+    justify-content: center;
+    /* align-items: center; */
+    background: lavender;
+    height: 100vh;
+    .container{
+        padding:4.5rem;
+       // width:50%;
+       .card{
+        padding: 2.5rem;
+        
+       
+       }
+       .taskFormSection{
+        padding: 2rem;
+       }
+       .Tasktable{
+        padding:2rem;
+       }
+       
+    }
+}
+
+#submitButton{
+    margin-top: 2rem;
+}
+
