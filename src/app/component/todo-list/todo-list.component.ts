@@ -10,7 +10,7 @@ export class TodoListComponent {
 
   
   taskArr=[{
-    taskName:'Jyotishree',
+    taskName:'Task Name',
     IsCompleted:false
   }]
 
@@ -29,6 +29,7 @@ export class TodoListComponent {
   OnDelete(index:number){
     console.log(index);
     this.taskArr.splice(index,1)
+    alert("Task Deleted !..")
 
   }
 
